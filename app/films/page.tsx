@@ -1,0 +1,258 @@
+import Header from "@/components/header"
+import Footer from "@/components/footer"
+import WhatsAppChat from "@/components/whatsapp-chat"
+import { Button } from "@/components/ui/button"
+import { Play, Clock, Calendar, Award } from "lucide-react"
+
+export default function FilmsPage() {
+  const films = [
+    {
+      title: "Love Stories: Sarah & Michael",
+      duration: "12:30",
+      date: "2024",
+      thumbnail: "/placeholder.svg?height=400&width=600&text=Wedding+Film+1",
+      description:
+        "A cinematic wedding film capturing the beautiful love story of Sarah and Michael with artistic excellence and emotional depth.",
+      category: "Wedding Film",
+      awards: ["Best Wedding Film 2024", "Cinematography Excellence"],
+      featured: true,
+    },
+    {
+      title: "Corporate Vision: TechCorp",
+      duration: "8:45",
+      date: "2024",
+      thumbnail: "/placeholder.svg?height=400&width=600&text=Corporate+Film+1",
+      description:
+        "Professional corporate film showcasing TechCorp's innovative solutions and company culture with compelling storytelling.",
+      category: "Corporate Film",
+      awards: ["Corporate Excellence Award"],
+      featured: false,
+    },
+    {
+      title: "Rhythm & Soul Music Video",
+      duration: "4:20",
+      date: "2024",
+      thumbnail: "/placeholder.svg?height=400&width=600&text=Music+Video+1",
+      description:
+        "Creative music video with stunning visuals and artistic cinematography that brings the artist's vision to life.",
+      category: "Music Video",
+      awards: ["Creative Vision Award"],
+      featured: false,
+    },
+    {
+      title: "Family Bonds Documentary",
+      duration: "15:00",
+      date: "2023",
+      thumbnail: "/placeholder.svg?height=400&width=600&text=Documentary+1",
+      description:
+        "Heartwarming documentary exploring the bonds that keep families together through life's challenges and celebrations.",
+      category: "Documentary",
+      awards: ["Documentary Excellence", "Emotional Impact Award"],
+      featured: false,
+    },
+    {
+      title: "Brand Story: Luxury Collection",
+      duration: "6:15",
+      date: "2023",
+      thumbnail: "/placeholder.svg?height=400&width=600&text=Commercial+1",
+      description:
+        "High-end commercial showcasing the elegance and craftsmanship of luxury products with sophisticated cinematography.",
+      category: "Commercial",
+      awards: ["Commercial Innovation Award"],
+      featured: false,
+    },
+    {
+      title: "Event Highlights: Annual Gala",
+      duration: "10:30",
+      date: "2023",
+      thumbnail: "/placeholder.svg?height=400&width=600&text=Event+Film+1",
+      description:
+        "Spectacular highlights from an exclusive annual gala event capturing the elegance and excitement of the evening.",
+      category: "Event Film",
+      awards: ["Event Coverage Excellence"],
+      featured: false,
+    },
+  ]
+
+  return (
+    <div className="min-h-screen bg-black">
+      <Header />
+
+      {/* Hero Section */}
+      <section className="pt-32 pb-20 bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-red-600/10 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-red-800/10 rounded-full blur-2xl animate-pulse delay-1000" />
+        </div>
+
+        <div className="container mx-auto px-6 text-center relative z-10">
+          <div className="inline-block mb-6">
+            <span className="bg-gradient-to-r from-red-600 to-red-400 text-white px-6 py-3 rounded-full text-sm font-semibold uppercase tracking-wider">
+              Film Collection
+            </span>
+          </div>
+          <h1 className="text-6xl md:text-8xl font-black mb-8">
+            <span className="block bg-gradient-to-r from-white via-gray-100 to-red-400 bg-clip-text text-transparent">
+              Featured
+            </span>
+            <span className="block bg-gradient-to-r from-red-600 via-red-500 to-red-400 bg-clip-text text-transparent">
+              Films
+            </span>
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+            Watch our award-winning film productions and discover why clients choose M.s Video for their most important
+            moments and brand storytelling needs.
+          </p>
+        </div>
+      </section>
+
+      {/* Featured Film */}
+      <section className="py-20 bg-gray-900">
+        <div className="container mx-auto px-6">
+          <div className="mb-20">
+            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-black via-gray-900 to-black border border-red-900/20">
+              <div className="relative">
+                <img
+                  src={films[0].thumbnail || "/placeholder.svg"}
+                  alt={films[0].title}
+                  className="w-full h-96 lg:h-[600px] object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
+
+                {/* Play Button */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="group cursor-pointer">
+                    <div className="relative">
+                      <div className="absolute inset-0 bg-red-600 rounded-full blur-2xl opacity-50 group-hover:opacity-75 transition-opacity animate-pulse" />
+                      <div className="relative p-12 bg-gradient-to-r from-red-600 to-red-800 rounded-full hover:from-red-700 hover:to-red-900 transition-all duration-300 group-hover:scale-110">
+                        <Play className="text-white" size={48} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Film Info Overlay */}
+                <div className="absolute bottom-0 left-0 right-0 p-8 lg:p-12">
+                  <div className="flex flex-wrap items-center gap-4 mb-6">
+                    <span className="bg-gradient-to-r from-red-600 to-red-800 text-white px-4 py-2 rounded-full text-sm font-bold">
+                      FEATURED FILM
+                    </span>
+                    <span className="bg-black/70 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm">
+                      {films[0].category}
+                    </span>
+                    {films[0].awards.map((award, index) => (
+                      <span
+                        key={index}
+                        className="bg-yellow-600/20 text-yellow-400 px-3 py-1 rounded-full text-sm flex items-center"
+                      >
+                        <Award className="mr-1" size={14} />
+                        {award}
+                      </span>
+                    ))}
+                  </div>
+                  <h3 className="text-4xl lg:text-6xl font-bold text-white mb-6">{films[0].title}</h3>
+                  <p className="text-xl text-gray-300 mb-8 max-w-4xl leading-relaxed">{films[0].description}</p>
+                  <div className="flex items-center space-x-8 text-gray-300">
+                    <div className="flex items-center">
+                      <Clock className="mr-2" size={24} />
+                      <span className="text-lg">{films[0].duration}</span>
+                    </div>
+                    <div className="flex items-center">
+                      <Calendar className="mr-2" size={24} />
+                      <span className="text-lg">{films[0].date}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Other Films */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {films.slice(1).map((film, index) => (
+              <div
+                key={index}
+                className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-black via-gray-900 to-black border border-red-900/20 hover:border-red-500/50 transition-all duration-500 hover:scale-105"
+              >
+                <div className="relative overflow-hidden">
+                  <img
+                    src={film.thumbnail || "/placeholder.svg"}
+                    alt={film.title}
+                    className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+
+                  {/* Play Button */}
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="p-6 bg-red-600/90 backdrop-blur-sm rounded-full hover:bg-red-700/90 transition-colors">
+                      <Play className="text-white" size={28} />
+                    </div>
+                  </div>
+
+                  {/* Category Badge */}
+                  <div className="absolute top-4 left-4">
+                    <span className="bg-red-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                      {film.category}
+                    </span>
+                  </div>
+
+                  {/* Duration */}
+                  <div className="absolute bottom-4 right-4 flex items-center space-x-2 text-white text-sm bg-black/70 backdrop-blur-sm px-3 py-1 rounded-full">
+                    <Clock size={16} />
+                    <span>{film.duration}</span>
+                  </div>
+
+                  {/* Awards */}
+                  {film.awards.length > 0 && (
+                    <div className="absolute top-4 right-4">
+                      <div className="bg-yellow-600/20 backdrop-blur-sm text-yellow-400 px-2 py-1 rounded-full text-xs flex items-center">
+                        <Award size={12} className="mr-1" />
+                        {film.awards.length}
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                <div className="p-8">
+                  <div className="flex items-center justify-between mb-3">
+                    <h3 className="text-white font-bold text-xl group-hover:text-red-400 transition-colors">
+                      {film.title}
+                    </h3>
+                    <div className="flex items-center text-gray-400 text-sm">
+                      <Calendar size={14} className="mr-1" />
+                      {film.date}
+                    </div>
+                  </div>
+                  <p className="text-gray-300 mb-6 leading-relaxed">{film.description}</p>
+
+                  {/* Awards */}
+                  {film.awards.length > 0 && (
+                    <div className="mb-6">
+                      <h4 className="text-yellow-400 font-semibold text-sm mb-2">Awards:</h4>
+                      <div className="space-y-1">
+                        {film.awards.map((award, idx) => (
+                          <div key={idx} className="text-gray-400 text-sm flex items-center">
+                            <Award size={12} className="mr-2 text-yellow-400" />
+                            {award}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  <Button className="w-full bg-gradient-to-r from-red-600 to-red-800 hover:from-red-700 hover:to-red-900 text-white transition-all duration-300">
+                    <Play className="mr-2" size={16} />
+                    Watch Film
+                  </Button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+      <WhatsAppChat />
+    </div>
+  )
+}
