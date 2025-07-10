@@ -1,3 +1,6 @@
+
+
+
 "use client"
 
 import { useState, useEffect, useRef } from "react"
@@ -23,11 +26,61 @@ export default function Hero() {
   const text2 = "storytelling"
 
   // Clean image arrays
-  const column1Images = ["/home/home01.JPG", "/home/01.jpeg", "/home/02.jpeg", "/home/03.jpeg"]
-  const column2Images = ["/home/04.jpeg", "/home/05.jpeg", "/home/06.jpeg", "/home/08.jpeg"]
-  const column3Images = ["/home/11.jpeg", "/home/13.jpeg", "/home/11.jpeg", "/home/01.jpeg"]
+  const column1Images = [
+    "/memories/memo10.jpg",
+    "/memories/memo12.jpg",
+    "/memories/memo13.jpg",
+    "/memories/memo21.jpg",
+    "/memories/memo22.jpg",
+    "/memories/memo23.jpg",
+    "/memories/memo24.jpg",
+    "/memories/memo30.jpg",
+  ]
+
+  const column2Images = [
+    "/memories/memo31.jpg",
+    "/memories/memo40.jpg",
+    "/memories/memo41.jpg",
+    "/memories/memo42.jpg",
+    "/memories/memo50.jpg",
+    "/memories/memo52.jpg",
+    "/memories/memo53.jpg",
+    "/memories/memo60.jpg",
+  ]
+
+  const column3Images = [
+    "/memories/memo61.jpg",
+    "/memories/memo62.jpg",
+    "/memories/memo63.jpg",
+    "/memories/memo70.jpg",
+    "/memories/memo71.jpg",
+    "/memories/memo72.jpg",
+    "/memories/memo74.jpg",
+  ]
 
   const allImages = [...column1Images, ...column2Images, ...column3Images]
+
+  // Different height patterns for more variety
+  const getImageHeight = (colIndex: number, imgIndex: number, setIndex: number) => {
+    if (isSmallScreen) {
+      // Mobile heights - more varied
+      const mobileHeights = [
+        [180, 220, 160, 240, 200, 190, 210, 170], // Column 1
+        [200, 180, 250, 160, 230, 190, 180, 220], // Column 2
+      ]
+      const heights = mobileHeights[colIndex] || mobileHeights[0]
+      return heights[imgIndex % heights.length] + setIndex * 10
+    } else {
+      // Desktop heights - much more varied
+      const desktopHeights = [
+        [320, 480, 280, 520, 360, 440, 300, 500], // Column 1 - varied portrait/landscape
+        [400, 300, 550, 250, 450, 320, 380, 480], // Column 2 - different rhythm
+        [350, 420, 280, 480, 320, 380, 460, 300], // Column 3 - another pattern
+      ]
+      const heights = desktopHeights[colIndex] || desktopHeights[0]
+      return heights[imgIndex % heights.length] + setIndex * 15
+    }
+  }
 
   // Simple image preloading
   const preloadImages = async () => {
@@ -165,19 +218,19 @@ export default function Hero() {
       {/* Background Images */}
       <div className="absolute inset-0">
         {isSmallScreen ? (
-          // Mobile: 2 columns
+          // Mobile: 2 columns with varied heights
           <div className="grid grid-cols-2 gap-1 h-full p-2">
             <div className="relative overflow-hidden">
               <div className="flex flex-col gap-1" style={{ animation: "scrollUp 45s linear infinite" }}>
                 {Array.from({ length: 4 }).map((_, setIndex) => (
                   <div key={setIndex} className="flex flex-col gap-1">
-                    {column1Images.slice(0, 2).map((src, imgIndex) => (
+                    {column1Images.slice(0, 4).map((src, imgIndex) => (
                       <div key={`${setIndex}-${imgIndex}`} className="relative group">
                         <img
                           src={src || "/placeholder.svg"}
                           alt={`Portfolio ${imgIndex + 1}`}
                           className="w-full h-auto object-cover rounded border border-red-500/50 transition-all duration-300 group-hover:border-red-400"
-                          style={{ height: `${120 + imgIndex * 40}px` }}
+                          style={{ height: `${getImageHeight(0, imgIndex, setIndex)}px` }}
                         />
                       </div>
                     ))}
@@ -189,13 +242,13 @@ export default function Hero() {
               <div className="flex flex-col gap-1" style={{ animation: "scrollDown 45s linear infinite" }}>
                 {Array.from({ length: 4 }).map((_, setIndex) => (
                   <div key={setIndex} className="flex flex-col gap-1">
-                    {column2Images.slice(0, 2).map((src, imgIndex) => (
+                    {column2Images.slice(0, 4).map((src, imgIndex) => (
                       <div key={`${setIndex}-${imgIndex}`} className="relative group">
                         <img
                           src={src || "/placeholder.svg"}
                           alt={`Portfolio ${imgIndex + 1}`}
                           className="w-full h-auto object-cover rounded border border-red-500/50 transition-all duration-300 group-hover:border-red-400"
-                          style={{ height: `${140 + imgIndex * 30}px` }}
+                          style={{ height: `${getImageHeight(1, imgIndex, setIndex)}px` }}
                         />
                       </div>
                     ))}
@@ -205,7 +258,7 @@ export default function Hero() {
             </div>
           </div>
         ) : (
-          // Desktop: 3 columns
+          // Desktop: 3 columns with much more varied heights
           <div className="grid grid-cols-3 gap-2 md:gap-4 h-full p-4 md:p-8">
             {[column1Images, column2Images, column3Images].map((images, colIndex) => (
               <div key={colIndex} className="relative overflow-hidden">
@@ -232,7 +285,7 @@ export default function Hero() {
                               src={src || "/placeholder.svg"}
                               alt={`Portfolio ${imgIndex + 1}`}
                               className="w-full h-auto object-cover rounded-lg border border-red-500/60 transition-all duration-500 group-hover:scale-105 group-hover:border-red-400"
-                              style={{ height: `${300 + imgIndex * 100}px` }}
+                              style={{ height: `${getImageHeight(colIndex, imgIndex, setIndex)}px` }}
                             />
                           </div>
                         )
@@ -246,8 +299,8 @@ export default function Hero() {
         )}
 
         {/* Clean overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-black/40"></div>
+        {/* <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-black/40"></div> */}
       </div>
 
       {/* Content */}
@@ -389,7 +442,6 @@ export default function Hero() {
             transform: translateY(-50%);
           }
         }
-
         @keyframes scrollDown {
           0% {
             transform: translateY(-50%);
@@ -398,7 +450,6 @@ export default function Hero() {
             transform: translateY(0);
           }
         }
-
         @keyframes spin {
           0% {
             transform: rotate(0deg);
