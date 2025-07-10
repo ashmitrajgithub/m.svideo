@@ -187,31 +187,31 @@ export default function Hero() {
   }
 
   // Simple loading screen
-  const LoadingScreen = () => (
-    <div className="fixed inset-0 bg-black z-50 flex items-center justify-center">
-      <div className="text-center">
-        <div className="mb-6">
-          <div className="relative w-16 h-16 mx-auto">
-            <div className="absolute inset-0 border-2 border-red-500/30 rounded-full"></div>
-            <div className="absolute inset-0 border-2 border-red-500 rounded-full border-t-transparent animate-spin"></div>
-            <Camera className="absolute inset-0 m-auto text-red-400" size={20} />
-          </div>
-        </div>
-        <h2 className="text-white text-xl font-semibold mb-4">Loading Portfolio</h2>
-        <div className="w-48 h-1 bg-gray-800 rounded-full mx-auto mb-2">
-          <div
-            className="h-full bg-red-500 rounded-full transition-all duration-300"
-            style={{ width: `${loadingProgress}%` }}
-          ></div>
-        </div>
-        <p className="text-gray-400 text-sm">{Math.round(loadingProgress)}%</p>
-      </div>
-    </div>
-  )
+  // const LoadingScreen = () => (
+  //   <div className="fixed inset-0 bg-black z-50 flex items-center justify-center">
+  //     <div className="text-center">
+  //       <div className="mb-6">
+  //         <div className="relative w-16 h-16 mx-auto">
+  //           <div className="absolute inset-0 border-2 border-red-500/30 rounded-full"></div>
+  //           <div className="absolute inset-0 border-2 border-red-500 rounded-full border-t-transparent animate-spin"></div>
+  //           <Camera className="absolute inset-0 m-auto text-red-400" size={20} />
+  //         </div>
+  //       </div>
+  //       <h2 className="text-white text-xl font-semibold mb-4">Loading Portfolio</h2>
+  //       <div className="w-48 h-1 bg-gray-800 rounded-full mx-auto mb-2">
+  //         <div
+  //           className="h-full bg-red-500 rounded-full transition-all duration-300"
+  //           style={{ width: `${loadingProgress}%` }}
+  //         ></div>
+  //       </div>
+  //       <p className="text-gray-400 text-sm">{Math.round(loadingProgress)}%</p>
+  //     </div>
+  //   </div>
+  // )
 
-  if (!imagesLoaded) {
-    return <LoadingScreen />
-  }
+  // if (!imagesLoaded) {
+  //   return <LoadingScreen />
+  // }
 
   return (
     <section ref={containerRef} className="relative min-h-screen bg-black overflow-hidden">
