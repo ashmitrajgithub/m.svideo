@@ -18,7 +18,7 @@ export default function Home() {
       <About />
       <ClientReviews />
       <Memories />
-      <PortfolioPreview />
+      {/* <PortfolioPreview /> */}
       <FilmsPreview />
       <Footer />
       <WhatsAppChat />
