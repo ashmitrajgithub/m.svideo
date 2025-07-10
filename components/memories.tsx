@@ -907,13 +907,15 @@ export default function Memories() {
               <div className="w-4 sm:w-6 md:w-8 lg:w-12 h-px bg-gradient-to-l from-transparent to-gray-500 ml-1.5 sm:ml-2 md:ml-3 lg:ml-4" />
             </div>
 
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-light mb-2 sm:mb-3 md:mb-4 lg:mb-6 leading-tight px-1 sm:px-2 md:px-4">
-              <span className="text-white">Award-Winning </span>
-              <span className="text-white relative">
-                Projects
-                <div className="absolute -bottom-0.5 sm:-bottom-1 md:-bottom-2 left-0 w-full h-px bg-gradient-to-r from-gray-500 to-transparent opacity-50" />
-              </span>
-            </h2>
+            
+            <h2 className="text-3xl md:text-5xl lg:text-7xl font-black mb-6 md:mb-8 leading-tight">
+            <span className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-700 bg-clip-text text-transparent block mb-1 md:mb-2">
+              Award Wining
+            </span>
+            <span className="bg-gradient-to-r from-red-600 via-red-500 to-red-400 bg-clip-text text-transparent block">
+              Projects
+            </span>
+          </h2>
 
             <p className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-300 max-w-sm sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl mx-auto leading-relaxed px-1 sm:px-2 md:px-4">
               Explore our curated collection of professional photography and videography work, featuring award-winning
