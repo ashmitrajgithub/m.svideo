@@ -299,8 +299,8 @@ export default function Hero() {
         )}
 
         {/* Clean overlay */}
-        {/* <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-black/40"></div> */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/20 to-black/30"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/10 via-black/10 to-black/20"></div>
       </div>
 
       {/* Content */}
