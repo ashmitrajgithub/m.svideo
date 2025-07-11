@@ -1,12 +1,10 @@
-
-
-
 "use client"
 
 import { useState, useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Camera, Video, Users, Calendar, Sparkles } from "lucide-react"
 import Link from "next/link"
+import CloudinaryImage from "@/components/cloudinary-image"
 
 export default function Hero() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
@@ -25,37 +23,38 @@ export default function Hero() {
   const text1 = "CINEMATIC"
   const text2 = "storytelling"
 
-  // Clean image arrays
+  // Complete collection of your Cloudinary public IDs
   const column1Images = [
-    "/memories/memo10.jpg",
-    "/memories/memo12.jpg",
-    "/memories/memo13.jpg",
-    "/memories/memo21.jpg",
-    "/memories/memo22.jpg",
-    "/memories/memo23.jpg",
-    "/memories/memo24.jpg",
-    "/memories/memo30.jpg",
+    "memo70_xiofna",
+    "memo63_ksveii",
+    "memo62_rj4z34",
+    "memo61_dqcizs",
+    "memo60_zxlrev",
+    "memo13_ucmm0k",
+    "memo12_obj18h",
+    "memo10_va49r7",
   ]
 
   const column2Images = [
-    "/memories/memo31.jpg",
-    "/memories/memo40.jpg",
-    "/memories/memo41.jpg",
-    "/memories/memo42.jpg",
-    "/memories/memo50.jpg",
-    "/memories/memo52.jpg",
-    "/memories/memo53.jpg",
-    "/memories/memo60.jpg",
+    "memo50_agem4b",
+    "memo53_ky2jho",
+    "memo52_aewgen",
+    "memo42_iru12a",
+    "memo41_fgekmo",
+    "memo40_sgapo1",
+    "memo32_xgubt8",
+    "memo30_yj1sqk",
   ]
 
   const column3Images = [
-    "/memories/memo61.jpg",
-    "/memories/memo62.jpg",
-    "/memories/memo63.jpg",
-    "/memories/memo70.jpg",
-    "/memories/memo71.jpg",
-    "/memories/memo72.jpg",
-    "/memories/memo74.jpg",
+    "memo31_b3czs9",
+    "memo24_w2uudg",
+    "memo23_tzvfpr",
+    "memo22_fbjlgd",
+    "memo21_itabwh",
+    "memo74_xizfav",
+    "memo72_frtyiy",
+    "memo71_bauf0t",
   ]
 
   const allImages = [...column1Images, ...column2Images, ...column3Images]
@@ -82,25 +81,11 @@ export default function Hero() {
     }
   }
 
-  // Simple image preloading
+  // Simple image preloading - skip for now to test direct loading
   const preloadImages = async () => {
-    const imagePromises = allImages.map((src, index) => {
-      return new Promise<void>((resolve) => {
-        const img = new Image()
-        img.onload = () => {
-          setLoadingProgress(((index + 1) / allImages.length) * 100)
-          resolve()
-        }
-        img.onerror = () => {
-          setLoadingProgress(((index + 1) / allImages.length) * 100)
-          resolve()
-        }
-        img.src = src
-      })
-    })
-
-    await Promise.all(imagePromises)
+    // Skip preloading and just set as loaded
     setImagesLoaded(true)
+    setLoadingProgress(100)
     setTimeout(() => setIsLoaded(true), 200)
   }
 
@@ -186,33 +171,6 @@ export default function Hero() {
     }
   }
 
-  // Simple loading screen
-  // const LoadingScreen = () => (
-  //   <div className="fixed inset-0 bg-black z-50 flex items-center justify-center">
-  //     <div className="text-center">
-  //       <div className="mb-6">
-  //         <div className="relative w-16 h-16 mx-auto">
-  //           <div className="absolute inset-0 border-2 border-red-500/30 rounded-full"></div>
-  //           <div className="absolute inset-0 border-2 border-red-500 rounded-full border-t-transparent animate-spin"></div>
-  //           <Camera className="absolute inset-0 m-auto text-red-400" size={20} />
-  //         </div>
-  //       </div>
-  //       <h2 className="text-white text-xl font-semibold mb-4">Loading Portfolio</h2>
-  //       <div className="w-48 h-1 bg-gray-800 rounded-full mx-auto mb-2">
-  //         <div
-  //           className="h-full bg-red-500 rounded-full transition-all duration-300"
-  //           style={{ width: `${loadingProgress}%` }}
-  //         ></div>
-  //       </div>
-  //       <p className="text-gray-400 text-sm">{Math.round(loadingProgress)}%</p>
-  //     </div>
-  //   </div>
-  // )
-
-  // if (!imagesLoaded) {
-  //   return <LoadingScreen />
-  // }
-
   return (
     <section ref={containerRef} className="relative min-h-screen bg-black overflow-hidden">
       {/* Background Images */}
@@ -224,13 +182,15 @@ export default function Hero() {
               <div className="flex flex-col gap-1" style={{ animation: "scrollUp 45s linear infinite" }}>
                 {Array.from({ length: 4 }).map((_, setIndex) => (
                   <div key={setIndex} className="flex flex-col gap-1">
-                    {column1Images.slice(0, 4).map((src, imgIndex) => (
+                    {column1Images.map((src, imgIndex) => (
                       <div key={`${setIndex}-${imgIndex}`} className="relative group">
-                        <img
-                          src={src || "/placeholder.svg"}
+                        <CloudinaryImage
+                          src={src}
                           alt={`Portfolio ${imgIndex + 1}`}
-                          className="w-full h-auto object-cover rounded border border-red-500/50 transition-all duration-300 group-hover:border-red-400"
-                          style={{ height: `${getImageHeight(0, imgIndex, setIndex)}px` }}
+                          width={300}
+                          height={getImageHeight(0, imgIndex, setIndex)}
+                          className="w-full rounded border border-red-500/50 transition-all duration-300 group-hover:border-red-400"
+                          crop={{ type: "fill", gravity: "auto" }}
                         />
                       </div>
                     ))}
@@ -242,13 +202,15 @@ export default function Hero() {
               <div className="flex flex-col gap-1" style={{ animation: "scrollDown 45s linear infinite" }}>
                 {Array.from({ length: 4 }).map((_, setIndex) => (
                   <div key={setIndex} className="flex flex-col gap-1">
-                    {column2Images.slice(0, 4).map((src, imgIndex) => (
+                    {column2Images.map((src, imgIndex) => (
                       <div key={`${setIndex}-${imgIndex}`} className="relative group">
-                        <img
-                          src={src || "/placeholder.svg"}
+                        <CloudinaryImage
+                          src={src}
                           alt={`Portfolio ${imgIndex + 1}`}
-                          className="w-full h-auto object-cover rounded border border-red-500/50 transition-all duration-300 group-hover:border-red-400"
-                          style={{ height: `${getImageHeight(1, imgIndex, setIndex)}px` }}
+                          width={300}
+                          height={getImageHeight(1, imgIndex, setIndex)}
+                          className="w-full rounded border border-red-500/50 transition-all duration-300 group-hover:border-red-400"
+                          crop={{ type: "fill", gravity: "auto" }}
                         />
                       </div>
                     ))}
@@ -281,11 +243,13 @@ export default function Hero() {
                               transform: `translate(${mouseParallax.x}px, ${mouseParallax.y}px)`,
                             }}
                           >
-                            <img
-                              src={src || "/placeholder.svg"}
+                            <CloudinaryImage
+                              src={src}
                               alt={`Portfolio ${imgIndex + 1}`}
-                              className="w-full h-auto object-cover rounded-lg border border-red-500/60 transition-all duration-500 group-hover:scale-105 group-hover:border-red-400"
-                              style={{ height: `${getImageHeight(colIndex, imgIndex, setIndex)}px` }}
+                              width={400}
+                              height={getImageHeight(colIndex, imgIndex, setIndex)}
+                              className="w-full rounded-lg border border-red-500/60 transition-all duration-500 group-hover:scale-105 group-hover:border-red-400"
+                              crop={{ type: "fill", gravity: "auto" }}
                             />
                           </div>
                         )

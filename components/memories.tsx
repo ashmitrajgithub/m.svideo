@@ -1,7 +1,4 @@
-
-
 "use client"
-
 import type React from "react"
 import { useState, useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
@@ -48,7 +45,7 @@ export default function Memories() {
   const memories = [
     {
       id: 1,
-      src: "/memories/memo10.jpg",
+      src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261129/memo10_va49r7.jpg",
       title: "Sarah & Michael's Wedding",
       description:
         "An intimate ceremony captured in Central Park during golden hour, showcasing natural moments and genuine emotions.",
@@ -66,7 +63,7 @@ export default function Memories() {
       relatedImages: [
         {
           id: "1a",
-          src: "/memories/memo12.jpg",
+          src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261129/memo12_obj18h.jpg",
           title: "Bridal Preparation",
           description: "Getting ready moments with natural light and emotional anticipation",
           time: "10:00 AM",
@@ -74,7 +71,7 @@ export default function Memories() {
         },
         {
           id: "1b",
-          src: "/memories/memo13.jpg",
+          src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261129/memo13_ucmm0k.jpg",
           title: "Exchange of Vows",
           description: "The emotional moment of saying 'I do' surrounded by loved ones",
           time: "4:30 PM",
@@ -82,7 +79,7 @@ export default function Memories() {
         },
         {
           id: "1c",
-          src: "/memories/memo21.jpg",
+          src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261129/memo21_itabwh.jpg",
           title: "Reception Celebration",
           description: "Dancing and celebration with family and friends under string lights",
           time: "8:00 PM",
@@ -90,7 +87,7 @@ export default function Memories() {
         },
         {
           id: "1d",
-          src: "/memories/memo22.jpg",
+          src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261131/memo22_fbjlgd.jpg",
           title: "Couple Portraits",
           description: "Romantic portraits in the golden hour light with natural bokeh",
           time: "6:00 PM",
@@ -98,7 +95,7 @@ export default function Memories() {
         },
         {
           id: "1e",
-          src: "/memories/memo23.jpg",
+          src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261131/memo23_tzvfpr.jpg",
           title: "Wedding Details",
           description: "Beautiful details of rings, flowers, and decor with macro precision",
           time: "2:00 PM",
@@ -108,7 +105,7 @@ export default function Memories() {
     },
     {
       id: 2,
-      src: "/memories/memo24.jpg",
+      src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261131/memo24_w2uudg.jpg",
       title: "Executive Portrait Session",
       description: "Professional corporate headshots with clean lighting and modern aesthetics for leadership team.",
       category: "portraits",
@@ -125,7 +122,7 @@ export default function Memories() {
       relatedImages: [
         {
           id: "2a",
-          src: "/memories/memo30.jpg",
+          src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261131/memo30_yj1sqk.jpg",
           title: "CEO Portrait",
           description: "Professional headshot with dramatic lighting and confident pose",
           time: "10:00 AM",
@@ -133,7 +130,7 @@ export default function Memories() {
         },
         {
           id: "2b",
-          src: "/memories/memo31.jpg",
+          src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261131/memo31_b3czs9.jpg",
           title: "Team Portrait",
           description: "Group portrait of the executive team in modern office setting",
           time: "11:30 AM",
@@ -141,7 +138,7 @@ export default function Memories() {
         },
         {
           id: "2c",
-          src: "/memories/memo40.jpg",
+          src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261132/memo40_sgapo1.jpg",
           title: "Environmental Portrait",
           description: "Executive in their office environment showcasing leadership",
           time: "2:00 PM",
@@ -151,7 +148,7 @@ export default function Memories() {
     },
     {
       id: 3,
-      src: "/memories/memo41.jpg",
+      src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261132/memo41_fgekmo.jpg",
       title: "Annual Corporate Gala",
       description: "Comprehensive event coverage including keynote presentations and networking moments.",
       category: "events",
@@ -169,7 +166,7 @@ export default function Memories() {
       relatedImages: [
         {
           id: "3a",
-          src: "/memories/memo42.jpg",
+          src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261132/memo42_iru12a.jpg",
           title: "Event Setup",
           description: "Beautiful ballroom setup before guests arrive with elegant lighting",
           time: "5:00 PM",
@@ -177,7 +174,7 @@ export default function Memories() {
         },
         {
           id: "3b",
-          src: "/memories/memo50.jpg",
+          src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261132/memo50_agem4b.jpg",
           title: "Keynote Presentation",
           description: "CEO delivering the opening keynote address to engaged audience",
           time: "7:30 PM",
@@ -185,7 +182,7 @@ export default function Memories() {
         },
         {
           id: "3c",
-          src: "/memories/memo52.jpg",
+          src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261132/memo52_aewgen.jpg",
           title: "Awards Ceremony",
           description: "Recognition of outstanding achievements with emotional moments",
           time: "9:00 PM",
@@ -193,7 +190,7 @@ export default function Memories() {
         },
         {
           id: "3d",
-          src: "/memories/memo53.jpg",
+          src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261132/memo53_ky2jho.jpg",
           title: "Networking Session",
           description: "Guests connecting and celebrating together in elegant atmosphere",
           time: "10:00 PM",
@@ -203,7 +200,7 @@ export default function Memories() {
     },
     {
       id: 4,
-      src: "/memories/memo60.jpg",
+      src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261132/memo60_zxlrev.jpg",
       title: "Oceanside Wedding",
       description: "Romantic beachside ceremony with natural lighting and candid moments.",
       category: "weddings",
@@ -221,7 +218,7 @@ export default function Memories() {
       relatedImages: [
         {
           id: "4a",
-          src: "/memories/memo61.jpg",
+          src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261133/memo61_dqcizs.jpg",
           title: "Beach Ceremony",
           description: "Ceremony setup on the pristine beach with ocean backdrop",
           time: "5:00 PM",
@@ -229,7 +226,7 @@ export default function Memories() {
         },
         {
           id: "4b",
-          src: "/memories/memo62.jpg",
+          src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261133/memo62_rj4z34.jpg",
           title: "Sunset Portraits",
           description: "Romantic couple portraits during golden hour with ocean waves",
           time: "7:00 PM",
@@ -237,7 +234,7 @@ export default function Memories() {
         },
         {
           id: "4c",
-          src: "/memories/memo63.jpg",
+          src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261133/memo63_ksveii.jpg",
           title: "Beach Reception",
           description: "Celebration under the stars by the ocean with string lights",
           time: "8:30 PM",
@@ -247,7 +244,7 @@ export default function Memories() {
     },
     {
       id: 5,
-      src: "/memories/memo70.jpg",
+      src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261133/memo70_xiofna.jpg",
       title: "Editorial Portrait Session",
       description: "Creative portrait work with professional lighting and contemporary styling.",
       category: "portraits",
@@ -264,7 +261,7 @@ export default function Memories() {
       relatedImages: [
         {
           id: "5a",
-          src: "/memories/memo71.jpg",
+          src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261129/memo71_bauf0t.jpg",
           title: "Studio Setup",
           description: "Behind the scenes of the fashion shoot with professional lighting",
           time: "10:00 AM",
@@ -272,7 +269,7 @@ export default function Memories() {
         },
         {
           id: "5b",
-          src: "/memories/memo72.jpg",
+          src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261130/memo72_frtyiy.jpg",
           title: "Creative Lighting",
           description: "Dramatic lighting techniques in action with model preparation",
           time: "11:30 AM",
@@ -280,7 +277,7 @@ export default function Memories() {
         },
         {
           id: "5c",
-          src: "/memories/memo74.jpg",
+          src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261130/memo74_xizfav.jpg",
           title: "Final Portraits",
           description: "The stunning final portrait results with perfect styling",
           time: "2:00 PM",
@@ -290,7 +287,7 @@ export default function Memories() {
     },
     {
       id: 6,
-      src: "/memories/memo10.jpg",
+      src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261129/memo10_va49r7.jpg",
       title: "Tech Product Launch",
       description: "Product reveal event with comprehensive coverage of presentations and demonstrations.",
       category: "events",
@@ -307,7 +304,7 @@ export default function Memories() {
       relatedImages: [
         {
           id: "6a",
-          src: "/memories/memo12.jpg",
+          src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261129/memo12_obj18h.jpg",
           title: "Product Demonstration",
           description: "Live demonstration of the new technology with audience engagement",
           time: "7:00 PM",
@@ -315,7 +312,7 @@ export default function Memories() {
         },
         {
           id: "6b",
-          src: "/memories/memo13.jpg",
+          src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261129/memo13_ucmm0k.jpg",
           title: "Audience Engagement",
           description: "Capturing the audience's excitement and reactions to the reveal",
           time: "7:30 PM",
@@ -325,7 +322,7 @@ export default function Memories() {
     },
     {
       id: 7,
-      src: "/memories/memo21.jpg",
+      src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261129/memo21_itabwh.jpg",
       title: "Garden Wedding Ceremony",
       description: "Elegant garden setting with natural elements and soft lighting throughout the day.",
       category: "weddings",
@@ -342,7 +339,7 @@ export default function Memories() {
       relatedImages: [
         {
           id: "7a",
-          src: "/memories/memo22.jpg",
+          src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261131/memo22_fbjlgd.jpg",
           title: "Garden Ceremony Setup",
           description: "Beautiful floral arrangements in the garden with natural lighting",
           time: "3:00 PM",
@@ -350,7 +347,7 @@ export default function Memories() {
         },
         {
           id: "7b",
-          src: "/memories/memo23.jpg",
+          src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261131/memo23_tzvfpr.jpg",
           title: "Garden Vows",
           description: "Intimate vow exchange surrounded by nature and loved ones",
           time: "4:30 PM",
@@ -360,7 +357,7 @@ export default function Memories() {
     },
     {
       id: 8,
-      src: "/memories/memo24.jpg",
+      src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261131/memo24_w2uudg.jpg",
       title: "Multi-Generation Family",
       description: "Family portrait session capturing connections across generations in natural outdoor setting.",
       category: "portraits",
@@ -377,7 +374,7 @@ export default function Memories() {
       relatedImages: [
         {
           id: "8a",
-          src: "/memories/memo30.jpg",
+          src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261131/memo30_yj1sqk.jpg",
           title: "Grandparents Portrait",
           description: "Beautiful portrait of the grandparents with warm natural light",
           time: "10:00 AM",
@@ -385,7 +382,7 @@ export default function Memories() {
         },
         {
           id: "8b",
-          src: "/memories/memo31.jpg",
+          src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261131/memo31_b3czs9.jpg",
           title: "Children Playing",
           description: "Candid moments of children playing together in the park",
           time: "10:30 AM",
@@ -393,7 +390,7 @@ export default function Memories() {
         },
         {
           id: "8c",
-          src: "/memories/memo40.jpg",
+          src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261132/memo40_sgapo1.jpg",
           title: "Full Family Group",
           description: "Complete family portrait with all generations together",
           time: "11:00 AM",
@@ -403,7 +400,7 @@ export default function Memories() {
     },
     {
       id: 9,
-      src: "/memories/memo41.jpg",
+      src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261132/memo41_fgekmo.jpg",
       title: "Charity Fundraising Gala",
       description: "Elegant fundraising event with comprehensive coverage of speeches and presentations.",
       category: "events",
@@ -421,7 +418,7 @@ export default function Memories() {
       relatedImages: [
         {
           id: "9a",
-          src: "/memories/memo42.jpg",
+          src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261132/memo42_iru12a.jpg",
           title: "Keynote Speech",
           description: "Inspiring speech about the charity's mission and impact",
           time: "7:00 PM",
@@ -429,7 +426,7 @@ export default function Memories() {
         },
         {
           id: "9b",
-          src: "/memories/memo50.jpg",
+          src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261132/memo50_agem4b.jpg",
           title: "Silent Auction",
           description: "Guests participating in the fundraising auction with enthusiasm",
           time: "8:30 PM",
@@ -439,7 +436,7 @@ export default function Memories() {
     },
     {
       id: 10,
-      src: "/memories/memo52.jpg",
+      src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261132/memo52_aewgen.jpg",
       title: "Urban Rooftop Wedding",
       description: "City wedding with skyline backdrop, focusing on intimate moments and urban elegance.",
       category: "weddings",
@@ -456,7 +453,7 @@ export default function Memories() {
       relatedImages: [
         {
           id: "10a",
-          src: "/memories/memo53.jpg",
+          src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261132/memo53_ky2jho.jpg",
           title: "Rooftop Setup",
           description: "Urban ceremony setup with city views and elegant decorations",
           time: "4:00 PM",
@@ -464,7 +461,7 @@ export default function Memories() {
         },
         {
           id: "10b",
-          src: "/memories/memo60.jpg",
+          src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261132/memo60_zxlrev.jpg",
           title: "Skyline Portraits",
           description: "Couple portraits with Manhattan skyline during blue hour",
           time: "7:00 PM",
@@ -474,7 +471,7 @@ export default function Memories() {
     },
     {
       id: 11,
-      src: "/memories/memo61.jpg",
+      src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261133/memo61_dqcizs.jpg",
       title: "Maternity Portrait Session",
       description: "Expecting mother portraits with soft natural lighting and elegant poses.",
       category: "portraits",
@@ -491,7 +488,7 @@ export default function Memories() {
       relatedImages: [
         {
           id: "11a",
-          src: "/memories/memo62.jpg",
+          src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261133/memo62_rj4z34.jpg",
           title: "Outdoor Maternity",
           description: "Natural outdoor maternity portraits with soft golden light",
           time: "5:00 PM",
@@ -499,7 +496,7 @@ export default function Memories() {
         },
         {
           id: "11b",
-          src: "/memories/memo63.jpg",
+          src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261133/memo63_ksveii.jpg",
           title: "Couple Maternity",
           description: "Expecting couple portraits together in beautiful park setting",
           time: "5:30 PM",
@@ -509,7 +506,7 @@ export default function Memories() {
     },
     {
       id: 12,
-      src: "/memories/memo70.jpg",
+      src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261133/memo70_xiofna.jpg",
       title: "Industry Conference",
       description: "Professional conference coverage including keynote presentations and networking sessions.",
       category: "events",
@@ -527,7 +524,7 @@ export default function Memories() {
       relatedImages: [
         {
           id: "12a",
-          src: "/memories/memo71.jpg",
+          src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261129/memo71_bauf0t.jpg",
           title: "Keynote Speaker",
           description: "Industry leader delivering keynote presentation to engaged audience",
           time: "9:00 AM",
@@ -535,7 +532,7 @@ export default function Memories() {
         },
         {
           id: "12b",
-          src: "/memories/memo72.jpg",
+          src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261130/memo72_frtyiy.jpg",
           title: "Panel Discussion",
           description: "Expert panel discussing industry trends and innovations",
           time: "2:00 PM",
@@ -545,7 +542,7 @@ export default function Memories() {
     },
     {
       id: 13,
-      src: "/memories/memo74.jpg",
+      src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261130/memo74_xizfav.jpg",
       title: "Brooklyn Bridge Engagement",
       description: "Romantic engagement session with iconic NYC backdrop and natural couple interactions.",
       category: "weddings",
@@ -562,7 +559,7 @@ export default function Memories() {
       relatedImages: [
         {
           id: "13a",
-          src: "/memories/memo10.jpg",
+          src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261129/memo10_va49r7.jpg",
           title: "Bridge Portraits",
           description: "Romantic portraits on the iconic bridge with city backdrop",
           time: "6:00 PM",
@@ -570,7 +567,7 @@ export default function Memories() {
         },
         {
           id: "13b",
-          src: "/memories/memo12.jpg",
+          src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261129/memo12_obj18h.jpg",
           title: "City Views",
           description: "Engagement photos with city backdrop during golden hour",
           time: "6:30 PM",
@@ -580,7 +577,7 @@ export default function Memories() {
     },
     {
       id: 14,
-      src: "/memories/memo13.jpg",
+      src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261129/memo13_ucmm0k.jpg",
       title: "Executive Team Portraits",
       description: "Professional business portraits with consistent lighting and modern corporate aesthetic.",
       category: "portraits",
@@ -597,7 +594,7 @@ export default function Memories() {
       relatedImages: [
         {
           id: "14a",
-          src: "/memories/memo21.jpg",
+          src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261129/memo21_itabwh.jpg",
           title: "Team Portrait",
           description: "Professional group portrait of the executive team in modern office",
           time: "2:00 PM",
@@ -607,7 +604,7 @@ export default function Memories() {
     },
     {
       id: 15,
-      src: "/memories/memo22.jpg",
+      src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261131/memo22_fbjlgd.jpg",
       title: "Industry Awards Ceremony",
       description: "Annual awards event with comprehensive coverage of presentations and celebrations.",
       category: "events",
@@ -625,7 +622,7 @@ export default function Memories() {
       relatedImages: [
         {
           id: "15a",
-          src: "/memories/memo23.jpg",
+          src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261131/memo23_tzvfpr.jpg",
           title: "Award Winner",
           description: "Emotional moment of receiving the award with genuine reactions",
           time: "8:00 PM",
@@ -633,7 +630,7 @@ export default function Memories() {
         },
         {
           id: "15b",
-          src: "/memories/memo24.jpg",
+          src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261131/memo24_w2uudg.jpg",
           title: "Stage Presentation",
           description: "Professional stage setup and presentation with dramatic lighting",
           time: "7:30 PM",
@@ -643,7 +640,7 @@ export default function Memories() {
     },
     {
       id: 16,
-      src: "/memories/memo30.jpg",
+      src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261131/memo30_yj1sqk.jpg",
       title: "Mountain Wedding",
       description: "Destination wedding in Colorado with natural mountain backdrop and intimate ceremony moments.",
       category: "weddings",
@@ -660,7 +657,7 @@ export default function Memories() {
       relatedImages: [
         {
           id: "16a",
-          src: "/memories/memo31.jpg",
+          src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261131/memo31_b3czs9.jpg",
           title: "Mountain Ceremony",
           description: "Ceremony with stunning mountain backdrop and natural beauty",
           time: "4:00 PM",
@@ -668,7 +665,7 @@ export default function Memories() {
         },
         {
           id: "16b",
-          src: "/memories/memo40.jpg",
+          src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261132/memo40_sgapo1.jpg",
           title: "Mountain Portraits",
           description: "Couple portraits in the mountain landscape during golden hour",
           time: "6:00 PM",
@@ -678,7 +675,7 @@ export default function Memories() {
     },
     {
       id: 17,
-      src: "/memories/memo41.jpg",
+      src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261132/memo41_fgekmo.jpg",
       title: "Creative Professional Portraits",
       description: "Portrait series showcasing creative professionals in their work environments.",
       category: "portraits",
@@ -695,7 +692,7 @@ export default function Memories() {
       relatedImages: [
         {
           id: "17a",
-          src: "/memories/memo42.jpg",
+          src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261132/memo42_iru12a.jpg",
           title: "Artist in Studio",
           description: "Creative professional in their workspace with natural lighting",
           time: "2:00 PM",
@@ -705,7 +702,7 @@ export default function Memories() {
     },
     {
       id: 18,
-      src: "/memories/memo50.jpg",
+      src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261132/memo50_agem4b.jpg",
       title: "Fashion Week Coverage",
       description: "Behind-the-scenes and runway coverage of New York Fashion Week events.",
       category: "events",
@@ -723,7 +720,7 @@ export default function Memories() {
       relatedImages: [
         {
           id: "18a",
-          src: "/memories/memo52.jpg",
+          src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261132/memo52_aewgen.jpg",
           title: "Runway Show",
           description: "Models showcasing the latest collections with dramatic lighting",
           time: "8:00 PM",
@@ -731,7 +728,7 @@ export default function Memories() {
         },
         {
           id: "18b",
-          src: "/memories/memo53.jpg",
+          src: "https://res.cloudinary.com/dwmkm9k7f/image/upload/v1752261132/memo53_ky2jho.jpg",
           title: "Backstage Moments",
           description: "Behind-the-scenes preparation and energy before the show",
           time: "7:00 PM",
@@ -740,9 +737,6 @@ export default function Memories() {
       ],
     },
   ]
-  
- 
- 
 
   // Filter memories
   const filteredMemories = memories
@@ -1012,7 +1006,6 @@ export default function Memories() {
                 transform: scale(1.08);
                 filter: brightness(1.05) contrast(1.2) saturate(1.1);
               }
-
               /* Extra Small Mobile (320px-374px) */
               @media (min-width: 320px) and (max-width: 374px) {
                 .professional-honeycomb {
@@ -1025,7 +1018,6 @@ export default function Memories() {
                   --row-gap: -8px;
                 }
               }
-
               /* Small Mobile (375px-424px) */
               @media (min-width: 375px) and (max-width: 424px) {
                 .professional-honeycomb {
@@ -1038,7 +1030,6 @@ export default function Memories() {
                   --row-gap: -10px;
                 }
               }
-
               /* Medium Mobile (425px-479px) */
               @media (min-width: 425px) and (max-width: 479px) {
                 .professional-honeycomb {
@@ -1051,7 +1042,6 @@ export default function Memories() {
                   --row-gap: -12px;
                 }
               }
-
               /* Large Mobile (480px-639px) */
               @media (min-width: 480px) and (max-width: 639px) {
                 .professional-honeycomb {
@@ -1064,7 +1054,6 @@ export default function Memories() {
                   --row-gap: -14px;
                 }
               }
-
               /* Small Tablet Portrait (640px-767px) */
               @media (min-width: 640px) and (max-width: 767px) {
                 .professional-honeycomb {
@@ -1077,7 +1066,6 @@ export default function Memories() {
                   --row-gap: -16px;
                 }
               }
-
               /* Tablet Portrait (768px-1023px) */
               @media (min-width: 768px) and (max-width: 1023px) {
                 .professional-honeycomb {
@@ -1090,7 +1078,6 @@ export default function Memories() {
                   --row-gap: -18px;
                 }
               }
-
               /* Small Desktop/Laptop (1024px-1279px) - INCREASED SIZE */
               @media (min-width: 1024px) and (max-width: 1279px) {
                 .professional-honeycomb {
@@ -1103,7 +1090,6 @@ export default function Memories() {
                   --row-gap: -25px;
                 }
               }
-
               /* Medium Desktop (1280px-1535px) - INCREASED SIZE */
               @media (min-width: 1280px) and (max-width: 1535px) {
                 .professional-honeycomb {
@@ -1116,7 +1102,6 @@ export default function Memories() {
                   --row-gap: -30px;
                 }
               }
-
               /* Large Desktop (1536px-1919px) - INCREASED SIZE */
               @media (min-width: 1536px) and (max-width: 1919px) {
                 .professional-honeycomb {
@@ -1129,7 +1114,6 @@ export default function Memories() {
                   --row-gap: -35px;
                 }
               }
-
               /* Extra Large Desktop (1920px+) - INCREASED SIZE */
               @media (min-width: 1920px) {
                 .professional-honeycomb {
@@ -1142,7 +1126,6 @@ export default function Memories() {
                   --row-gap: -40px;
                 }
               }
-
               .professional-hexagon .video-badge {
                 position: absolute;
                 top: 4px;
@@ -1161,7 +1144,6 @@ export default function Memories() {
                 color: white;
                 box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
               }
-
               .professional-hexagon .related-badge {
                 position: absolute;
                 bottom: 4px;
@@ -1178,7 +1160,6 @@ export default function Memories() {
                 color: white;
                 box-shadow: 0 2px 8px rgba(107, 114, 128, 0.4);
               }
-
               /* Desktop Badge Adjustments - INCREASED SIZES */
               @media (min-width: 1024px) {
                 .professional-hexagon .video-badge,
@@ -1191,7 +1172,6 @@ export default function Memories() {
                   border-radius: 16px;
                 }
               }
-
               @media (min-width: 1280px) {
                 .professional-hexagon .video-badge,
                 .professional-hexagon .related-badge {
@@ -1203,7 +1183,6 @@ export default function Memories() {
                   border-radius: 18px;
                 }
               }
-
               @media (min-width: 1536px) {
                 .professional-hexagon .video-badge,
                 .professional-hexagon .related-badge {
@@ -1215,7 +1194,6 @@ export default function Memories() {
                   border-radius: 20px;
                 }
               }
-
               @media (min-width: 1920px) {
                 .professional-hexagon .video-badge,
                 .professional-hexagon .related-badge {
@@ -1227,7 +1205,6 @@ export default function Memories() {
                   border-radius: 22px;
                 }
               }
-
               /* Mobile Badge Adjustments */
               @media (min-width: 480px) {
                 .professional-hexagon .video-badge,
@@ -1240,7 +1217,6 @@ export default function Memories() {
                   border-radius: 16px;
                 }
               }
-
               @media (min-width: 768px) {
                 .professional-hexagon .video-badge,
                 .professional-hexagon .related-badge {
@@ -1252,7 +1228,6 @@ export default function Memories() {
                   border-radius: 20px;
                 }
               }
-
               /* Hexagon-shaped overlay that matches the clip-path */
               .professional-hexagon .overlay {
                 position: absolute;
@@ -1267,11 +1242,9 @@ export default function Memories() {
                 backdrop-filter: blur(2px);
                 clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
               }
-
               .professional-hexagon:hover .overlay {
                 opacity: 1;
               }
-
               .professional-hexagon .overlay-icon {
                 background: linear-gradient(135deg, #6b7280, #4b5563);
                 border-radius: 50%;
@@ -1281,22 +1254,18 @@ export default function Memories() {
                 transform: translateY(8px);
                 transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
               }
-
               .professional-hexagon:hover .overlay-icon {
                 transform: translateY(0);
               }
-
               .professional-hexagon .overlay-content {
                 text-align: center;
                 color: white;
                 transform: translateY(10px);
                 transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
               }
-
               .professional-hexagon:hover .overlay-content {
                 transform: translateY(0);
               }
-
               .professional-hexagon .overlay-title {
                 font-size: 8px;
                 font-weight: 600;
@@ -1304,14 +1273,12 @@ export default function Memories() {
                 padding: 0 6px;
                 line-height: 1.2;
               }
-
               .professional-hexagon .overlay-location {
                 font-size: 7px;
                 color: rgba(255, 255, 255, 0.8);
                 padding: 0 6px;
                 line-height: 1.1;
               }
-
               /* Desktop Overlay Content Adjustments - INCREASED SIZES */
               @media (min-width: 1024px) {
                 .professional-hexagon .overlay-icon {
@@ -1328,7 +1295,6 @@ export default function Memories() {
                   padding: 0 16px;
                 }
               }
-
               @media (min-width: 1280px) {
                 .professional-hexagon .overlay-icon {
                   padding: 20px;
@@ -1344,7 +1310,6 @@ export default function Memories() {
                   padding: 0 20px;
                 }
               }
-
               @media (min-width: 1536px) {
                 .professional-hexagon .overlay-icon {
                   padding: 24px;
@@ -1360,7 +1325,6 @@ export default function Memories() {
                   padding: 0 24px;
                 }
               }
-
               @media (min-width: 1920px) {
                 .professional-hexagon .overlay-icon {
                   padding: 28px;
@@ -1376,7 +1340,6 @@ export default function Memories() {
                   padding: 0 28px;
                 }
               }
-
               /* Mobile Overlay Content Adjustments */
               @media (min-width: 375px) {
                 .professional-hexagon .overlay-icon {
@@ -1393,7 +1356,6 @@ export default function Memories() {
                   padding: 0 8px;
                 }
               }
-
               @media (min-width: 480px) {
                 .professional-hexagon .overlay-icon {
                   padding: 8px;
@@ -1409,7 +1371,6 @@ export default function Memories() {
                   padding: 0 10px;
                 }
               }
-
               @media (min-width: 640px) {
                 .professional-hexagon .overlay-icon {
                   padding: 10px;
@@ -1425,7 +1386,6 @@ export default function Memories() {
                   padding: 0 12px;
                 }
               }
-
               @media (min-width: 768px) {
                 .professional-hexagon .overlay-icon {
                   padding: 12px;
@@ -1478,15 +1438,7 @@ export default function Memories() {
                         {/* Related Images Badge */}
                         
                         {/* Professional Hexagon-Shaped Overlay */}
-                        <div className="overlay">
-                          <div className="overlay-icon">
-                            <Eye className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 text-white" />
-                          </div>
-                          <div className="overlay-content">
-                            <div className="overlay-title">{memory.title}</div>
-                            <div className="overlay-location">{memory.location}</div>
-                          </div>
-                        </div>
+                       
                       </div>
                     ))}
                   </div>
@@ -1630,7 +1582,13 @@ export default function Memories() {
                 />
 
                 {/* Video Play Button for Mobile */}
-                
+                {selectedImage.type === "video" && !showRelatedImages && (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="bg-black/50 backdrop-blur-sm rounded-full p-3 sm:p-4 md:p-6 lg:p-8">
+                      <Play className="w-6 h-6 sm:w-8 sm:h-8 md:w-12 md:h-12 text-white fill-white" />
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
 
@@ -1750,5 +1708,3 @@ export default function Memories() {
     </>
   )
 }
-
-

@@ -1,173 +1,129 @@
+"use client"
+
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Play, ExternalLink, ArrowRight } from "lucide-react"
+import { Card, CardContent } from "@/components/ui/card"
+import { ArrowRight, Heart, Eye, Camera } from "lucide-react"
 import Link from "next/link"
+import CloudinaryImage from "@/components/cloudinary-image"
 
 export default function PortfolioPreview() {
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null)
+
   const portfolioItems = [
     {
-      title: "Sarah & John's Cinematic Wedding",
+      id: 1,
+      title: "Sarah & Michael",
+      category: "Wedding Photography",
+      location: "Tuscany, Italy",
+      image: "memo70_xiofna",
+      likes: 234,
+      views: 1200,
+    },
+    {
+      id: 2,
+      title: "Emma & James",
+      category: "Engagement Session",
+      location: "Central Park, NYC",
+      image: "memo63_ksveii",
+      likes: 189,
+      views: 890,
+    },
+    {
+      id: 3,
+      title: "Lisa & David",
       category: "Wedding Videography",
-      image: "/placeholder.svg?height=600&width=800&text=Wedding+Portfolio",
-      description: "A breathtaking outdoor wedding ceremony captured with multiple cameras and drone footage.",
-      duration: "12:30",
-      featured: true,
+      location: "Malibu Beach, CA",
+      image: "memo62_rj4z34",
+      likes: 312,
+      views: 1500,
     },
     {
-      title: "TechCorp Brand Story",
-      category: "Corporate Film",
-      image: "/placeholder.svg?height=600&width=800&text=Corporate+Portfolio",
-      description: "Professional corporate storytelling showcasing innovation and company culture.",
-      duration: "8:45",
-      featured: false,
-    },
-    {
-      title: "Executive Portrait Series",
-      category: "Portrait Photography",
-      image: "/placeholder.svg?height=600&width=800&text=Portrait+Portfolio",
-      description: "High-end executive portraits with dramatic lighting and professional styling.",
-      duration: "Photo Series",
-      featured: false,
+      id: 4,
+      title: "Anna & Robert",
+      category: "Destination Wedding",
+      location: "Santorini, Greece",
+      image: "memo61_dqcizs",
+      likes: 278,
+      views: 1100,
     },
   ]
 
   return (
-    <section className="py-32 bg-black relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-red-600/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-red-800/5 rounded-full blur-2xl" />
-      </div>
-
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-20">
-          <div className="inline-block mb-6">
-            <span className="bg-gradient-to-r from-red-600 to-red-400 text-white px-6 py-3 rounded-full text-sm font-semibold uppercase tracking-wider">
-              Featured Work
-            </span>
+    <section className="py-20 bg-gradient-to-b from-black to-gray-900">
+      <div className="container mx-auto px-4">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <div className="h-px bg-gradient-to-r from-transparent to-red-500 w-12"></div>
+            <Camera className="text-red-400" size={24} />
+            <div className="h-px bg-gradient-to-r from-red-500 to-transparent w-12"></div>
           </div>
-          <h2 className="text-5xl md:text-7xl font-black mb-8">
-            <span className="bg-gradient-to-r from-white via-gray-100 to-red-400 bg-clip-text text-transparent">
-              Our
-            </span>
-            <br />
-            <span className="bg-gradient-to-r from-red-600 via-red-500 to-red-400 bg-clip-text text-transparent">
-              Portfolio
-            </span>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            Our Latest <span className="text-red-400">Work</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            Explore our diverse portfolio showcasing the breadth and quality of our videography and photography work
-            across different industries and occasions.
+          <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+            Every couple has a unique story. Here are some of our recent captures that showcase the beauty, emotion, and
+            joy of love.
           </p>
         </div>
 
-        {/* Featured Project */}
-        <div className="mb-20">
-          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-gray-900 via-black to-gray-900 border border-red-900/20">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-              <div className="relative overflow-hidden">
-                <img
-                  src={portfolioItems[0].image || "/placeholder.svg"}
-                  alt={portfolioItems[0].title}
-                  className="w-full h-96 lg:h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-transparent lg:from-transparent lg:to-black/60" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="p-6 bg-red-600/90 backdrop-blur-sm rounded-full hover:bg-red-700/90 transition-colors cursor-pointer">
-                    <Play className="text-white" size={32} />
-                  </div>
-                </div>
-                <div className="absolute top-6 left-6">
-                  <span className="bg-gradient-to-r from-red-600 to-red-800 text-white px-4 py-2 rounded-full text-sm font-bold">
-                    FEATURED
-                  </span>
-                </div>
-                <div className="absolute bottom-6 right-6">
-                  <span className="bg-black/70 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm">
-                    {portfolioItems[0].duration}
-                  </span>
-                </div>
-              </div>
-
-              <div className="p-12 flex flex-col justify-center">
-                <div className="mb-4">
-                  <span className="text-red-400 font-semibold text-lg">{portfolioItems[0].category}</span>
-                </div>
-                <h3 className="text-4xl font-bold text-white mb-6">{portfolioItems[0].title}</h3>
-                <p className="text-gray-300 text-lg leading-relaxed mb-8">{portfolioItems[0].description}</p>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Button className="bg-gradient-to-r from-red-600 to-red-800 hover:from-red-700 hover:to-red-900 text-white px-8 py-3">
-                    <Play className="mr-2" size={20} />
-                    Watch Film
-                  </Button>
-                  <Button
-                    variant="outline"
-                    className="border-red-600/50 text-red-400 hover:bg-red-600 hover:text-white px-8 py-3 bg-transparent"
-                  >
-                    <ExternalLink className="mr-2" size={20} />
-                    View Details
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Other Portfolio Items */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          {portfolioItems.slice(1).map((item, index) => (
-            <div
-              key={index}
-              className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-900 via-black to-gray-900 border border-red-900/20 hover:border-red-500/50 transition-all duration-500 hover:scale-105"
+        {/* Portfolio Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          {portfolioItems.map((item, index) => (
+            <Card
+              key={item.id}
+              className="group bg-gray-800/50 border-gray-700 overflow-hidden hover:border-red-500/50 transition-all duration-300"
+              onMouseEnter={() => setHoveredCard(index)}
+              onMouseLeave={() => setHoveredCard(null)}
             >
-              <div className="relative overflow-hidden">
-                <img
-                  src={item.image || "/placeholder.svg"}
-                  alt={item.title}
-                  className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="p-4 bg-red-600/90 backdrop-blur-sm rounded-full">
-                    <Play className="text-white" size={24} />
+              <CardContent className="p-0">
+                <div className="relative overflow-hidden aspect-[4/5]">
+                  <CloudinaryImage
+                    src={item.image}
+                    alt={item.title}
+                    width={400}
+                    height={500}
+                    className="w-full h-full transition-transform duration-500 group-hover:scale-110"
+                    crop={{ type: "fill", gravity: "auto" }}
+                  />
+
+                  {/* Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                  {/* Stats */}
+                  <div className="absolute top-4 right-4 flex gap-2">
+                    <div className="bg-black/50 backdrop-blur-sm rounded-full px-2 py-1 flex items-center gap-1">
+                      <Heart className="w-3 h-3 text-red-400" />
+                      <span className="text-white text-xs">{item.likes}</span>
+                    </div>
+                    <div className="bg-black/50 backdrop-blur-sm rounded-full px-2 py-1 flex items-center gap-1">
+                      <Eye className="w-3 h-3 text-blue-400" />
+                      <span className="text-white text-xs">{item.views}</span>
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                    <h3 className="text-white font-semibold text-lg mb-1">{item.title}</h3>
+                    <p className="text-red-400 text-sm mb-1">{item.category}</p>
+                    <p className="text-gray-300 text-xs">{item.location}</p>
                   </div>
                 </div>
-                <div className="absolute top-4 left-4">
-                  <span className="bg-red-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                    {item.category}
-                  </span>
-                </div>
-                <div className="absolute bottom-4 right-4">
-                  <span className="bg-black/70 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm">
-                    {item.duration}
-                  </span>
-                </div>
-              </div>
-
-              <div className="p-8">
-                <h3 className="text-white font-bold text-xl mb-3 group-hover:text-red-400 transition-colors">
-                  {item.title}
-                </h3>
-                <p className="text-gray-300 mb-6 leading-relaxed">{item.description}</p>
-                <Button
-                  variant="outline"
-                  className="w-full border-red-600/50 text-red-400 hover:bg-red-600 hover:text-white transition-all duration-300 bg-transparent"
-                >
-                  View Project
-                  <ArrowRight className="ml-2" size={16} />
-                </Button>
-              </div>
-            </div>
+              </CardContent>
+            </Card>
           ))}
         </div>
 
+        {/* CTA Section */}
         <div className="text-center">
           <Link href="/portfolio">
             <Button
               size="lg"
-              className="bg-gradient-to-r from-red-600 to-red-800 hover:from-red-700 hover:to-red-900 text-white px-12 py-6 text-lg font-semibold rounded-full transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-red-500/25"
+              className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-semibold rounded-full shadow-lg hover:shadow-red-500/25 transition-all duration-300 hover:scale-105"
             >
-              View Complete Portfolio
-              <ArrowRight className="ml-3" size={20} />
+              View Full Portfolio
+              <ArrowRight className="ml-2" size={18} />
             </Button>
           </Link>
         </div>
